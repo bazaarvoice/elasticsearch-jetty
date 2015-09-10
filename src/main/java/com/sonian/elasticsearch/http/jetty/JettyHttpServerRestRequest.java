@@ -88,9 +88,11 @@ public class JettyHttpServerRestRequest extends HttpRequest {
         return content.length() > 0;
     }
 
-    @Override public boolean contentUnsafe() {
+    /*public boolean contentUnsafe() {
         return false;
     }
+    */
+
 
     @Override
     public BytesReference content() {
