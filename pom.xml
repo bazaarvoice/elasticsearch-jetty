@@ -78,6 +78,7 @@
 
     <properties>
         <elasticsearch.version>1.7.1</elasticsearch.version>
+        <yumrepo.s3RepositoryPath>s3://nexus-public-artifacts/yum-repo</yumrepo.s3RepositoryPath>
         <jetty.version>8.1.14.v20131031</jetty.version>
         <github.global.server>github</github.global.server>
     </properties>
