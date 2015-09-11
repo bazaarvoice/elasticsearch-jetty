@@ -275,5 +275,81 @@
                 </plugins>
             </build>
         </profile>
+        <profile>
+            <id>rpm</id>
+            <build>
+                <defaultGoal>verify</defaultGoal>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>rpm-maven-plugin</artifactId>
+                        <version>2.1.3</version>
+                        <extensions>true</extensions>
+                        <executions>
+                            <execution>
+                                <id>elasticsearch-jetty-plugin</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>attached-rpm</goal>
+                                </goals>
+                                <configuration>
+                                    <group>BV/Polloi</group>
+                                    <name>elasticsearch-jetty-plugin</name>
+                                    <defaultDirmode>755</defaultDirmode>
+                                    <defaultFilemode>755</defaultFilemode>
+                                    <defaultUsername>polloi</defaultUsername>
+                                    <defaultGroupname>polloi</defaultGroupname>
+                                    <mappings>
+                                        <mapping>
+                                            <directory>/opt/elasticsearch/plugins/jetty</directory>
+                                            <sources>
+                                                <source>
+                                                    <location>${project.build.directory}/releases/elasticsearch-jetty-${project.version}</location>
+                                                </source>
+                                            </sources>
+                                        </mapping>
+                                    </mappings>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>yum-deploy</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.bazaarvoice.maven.plugins</groupId>
+                        <artifactId>s3repo-maven-plugin</artifactId>
+                        <version>3.5</version>
+                        <executions>
+                            <execution>
+                                <phase>deploy</phase>
+                                <goals>
+                                    <goal>create-update</goal>
+                                </goals>
+                                <configuration>
+                                    <s3RepositoryPath>${yumrepo.s3RepositoryPath}</s3RepositoryPath>
+                                    <createrepoOpts>--simple-md-filenames --no-database</createrepoOpts>
+                                    <artifactItems>
+                                        <artifactItem>
+                                            <groupId>${project.groupId}</groupId>
+                                            <artifactId>${project.artifactId}</artifactId>
+                                            <version>${project.version}</version>
+                                            <type>rpm</type>
+                                            <!-- NOTE: in our shared repo, put polloi artifacts in the "elasticsearch-jetty-plugin" subfolder -->
+                                            <targetSubfolder>elasticsearch-jetty-plugin</targetSubfolder>
+                                            <targetExtension>noarch.rpm</targetExtension>
+                                        </artifactItem>
+                                    </artifactItems>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
     </profiles>
 </project>
