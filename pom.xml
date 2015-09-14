@@ -6,11 +6,11 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.sonian</groupId>
   <artifactId>elasticsearch-jetty</artifactId>
-  <version>1.7.1</version>
+  <version>1.7.1-BV</version>
   <packaging>jar</packaging>
   <description>Jetty plugin for ElasticSearch</description>
   <inceptionYear>2011</inceptionYear>
-  <url>https://github.com/sonian/elasticsearch-jetty</url>
+  <url>https://github.com/paul-e-cooley/elasticsearch-jetty</url>
   <licenses>
     <license>
       <name>The Apache Software License, Version 2.0</name>
@@ -19,8 +19,8 @@
     </license>
   </licenses>
   <scm>
-    <connection>scm:git:git@github.com:mkelkarbv/elasticsearch-jetty.git</connection>
-    <developerConnection>scm:git:git@github.com:mkelkarbv/elasticsearch-jetty.git</developerConnection>
+    <connection>scm:git:git@github.com:paul-e-cooley/elasticsearch-jetty.git</connection>
+    <developerConnection>scm:git:git@github.com:paul-e-cooley/elasticsearch-jetty.git</developerConnection>
     <url>http://github.com/paul-e-cooley/elasticsearch-jetty</url>
   </scm>
   <developers>
