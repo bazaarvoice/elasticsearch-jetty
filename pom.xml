@@ -286,6 +286,7 @@
                           <execution>
                               <id>elasticsearch-jetty-plugin</id>
                               <phase>package</phase>
+                              <inherited>false</inherited>
                               <goals>
                                   <goal>attached-rpm</goal>
                               </goals>
