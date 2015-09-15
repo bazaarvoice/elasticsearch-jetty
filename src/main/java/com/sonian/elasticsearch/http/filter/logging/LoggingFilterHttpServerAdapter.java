@@ -136,7 +136,7 @@ public class LoggingFilterHttpServerAdapter implements FilterHttpServerAdapter {
         private final String opaqueId;
 
         public LoggingHttpChannel(HttpRequest request, HttpChannel channel, String format, boolean logBody) {
-            super(request,true);
+            super(request,true); //add detailed error logging
             this.channel = channel;
             this.request = request;
 

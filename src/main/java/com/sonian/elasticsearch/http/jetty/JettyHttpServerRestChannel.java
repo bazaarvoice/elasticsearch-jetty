@@ -37,7 +37,7 @@ public class JettyHttpServerRestChannel extends HttpChannel {
     private final CountDownLatch latch;
 
     public JettyHttpServerRestChannel(RestRequest restRequest, HttpServletResponse resp) {
-        super(restRequest,true);
+        super(restRequest,true); //put detailed errors in log
         this.restRequest = restRequest;
         this.resp = resp;
         this.latch = new CountDownLatch(1);

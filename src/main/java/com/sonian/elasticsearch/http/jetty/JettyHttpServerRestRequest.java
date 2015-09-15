@@ -88,12 +88,6 @@ public class JettyHttpServerRestRequest extends HttpRequest {
         return content.length() > 0;
     }
 
-    /*public boolean contentUnsafe() {
-        return false;
-    }
-    */
-
-
     @Override
     public BytesReference content() {
         return content;  //To change body of implemented methods use File | Settings | File Templates.
