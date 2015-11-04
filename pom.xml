@@ -19,9 +19,9 @@
     </license>
   </licenses>
   <scm>
-    <connection>scm:git:git@github.com:paul-e-cooley/elasticsearch-jetty.git</connection>
-    <developerConnection>scm:git:git@github.com:paul-e-cooley/elasticsearch-jetty.git</developerConnection>
-    <url>http://github.com/paul-e-cooley/elasticsearch-jetty</url>
+    <connection>scm:git:git@github.com:mkelkarbv/elasticsearch-jetty.git</connection>
+    <developerConnection>scm:git:git@github.com:mkelkarbv/elasticsearch-jetty.git</developerConnection>
+    <url>http://github.com/mkelkarbv/elasticsearch-jetty</url>
   </scm>
   <developers>
     <developer>
