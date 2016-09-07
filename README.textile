@@ -1,5 +1,13 @@
 h1. Jetty Plugin
 
+We have forked this from https://github.com/sonian/elasticsearch-jetty in order to add support for ES 1.4.4. We used it to capture request logs, which we then used for load testing. 
+
+Since then, we haven't needed to make it work on a newer version of ES. When we do, the plan is either: update this project again, or perhaps place ES behind ha-proxy or nginx.
+
+Putting ES behind a web server has a few known benefits, and it also carries the option to log requests, without (in my opinion) the risk of swapping out the web-server layer in ES for one that's not officially supported or tested.
+
+If we update this project, it will be obvious. If we go a different direction, I will update the note on this page.
+
 h2. Compatibility
 
 The following table shows the versions of elasticsearch and jetty that Jetty Plugin was built with.
